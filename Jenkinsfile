@@ -11,7 +11,7 @@ pipeline {
         stage('Build') {
             steps {
                 // Run Maven install
-                bat 'javac ./HelloWorld.java'
+                bat 'mvn package'
             }
         }
     }
@@ -25,5 +25,4 @@ pipeline {
             // Notify failure
             echo 'Build failed!'
         }
-    }
 }
