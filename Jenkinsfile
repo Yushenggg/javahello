@@ -13,7 +13,7 @@ pipeline {
                 // Run Maven install
                 
                 bat 'set PATH=%PATH%;C:/Applications/Maven/apache-maven-3.9.9/bin'
-                bat 'mvn clean install'
+                bat 'C:/Applications/Maven/apache-maven-3.9.9/bin/mvn clean install'
             }
         }
     }
