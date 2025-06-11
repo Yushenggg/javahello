@@ -4,18 +4,29 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/Yushenggg/javahello.git'
+                // Checkout the code from the repository
+                git 'https://your-repository-url.git'
             }
         }
         stage('Build') {
             steps {
+                // Run Maven install
                 sh 'mvn install'
             }
         }
-        stage('Run') {
-            steps {
-                sh 'java HelloWorld'
-            }
+    }
+    post {
+        always {
+            // Archive the build artifacts
+            archiveArtifacts artifacts: '**/target/*.jar', allowEmptyArchive: true
+        }
+        success {
+            // Notify success
+            echo 'Build succeeded!'
+        }
+        failure {
+            // Notify failure
+            echo 'Build failed!'
         }
     }
 }
