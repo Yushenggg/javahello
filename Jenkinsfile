@@ -1,6 +1,9 @@
 pipeline {
     agent any
-
+    tools {
+        jdk 'Java17'
+        maven 'Maven3'
+    }
     stages {
         stage('Checkout') {
             steps {
@@ -12,8 +15,7 @@ pipeline {
             steps {
                 // Run Maven install
                 
-                bat 'set PATH=%PATH%;C:/Applications/Maven/apache-maven-3.9.9/bin'
-                bat 'C:/Applications/Maven/apache-maven-3.9.9/bin/mvn clean install'
+                bat 'mvn -B clean install'
             }
         }
     }
