@@ -8,10 +8,10 @@ pipeline {
                 git 'https://github.com/Yushenggg/javahello.git'
             }
         }
-        stage('Build') {
+        stage('Build with maven') {
             steps {
                 // Run Maven install
-                bat 'mvn package'
+                bat 'mvn clean install'
             }
         }
     }
