@@ -5,7 +5,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Checkout the code from the repository
-                git 'https://your-repository-url.git'
+                git 'https://github.com/Yushenggg/javahello.git'
             }
         }
         stage('Build') {
