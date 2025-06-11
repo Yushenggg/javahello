@@ -16,10 +16,7 @@ pipeline {
         }
     }
     post {
-        always {
-            // Archive the build artifacts
-            archiveArtifacts artifacts: './target/*.jar', allowEmptyArchive: true
-        }
+
         success {
             // Notify success
             echo 'Build succeeded!'
