@@ -11,7 +11,7 @@ pipeline {
         stage('Build') {
             steps {
                 // Run Maven install
-                sh 'javac ./HelloWorld.java'
+                bat 'javac ./HelloWorld.java'
             }
         }
     }
