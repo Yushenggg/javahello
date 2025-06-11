@@ -11,6 +11,8 @@ pipeline {
         stage('Build with maven') {
             steps {
                 // Run Maven install
+                
+                bat 'set PATH=%PATH%;C:/Applications/Maven/apache-maven-3.9.9/bin'
                 bat 'mvn clean install'
             }
         }
