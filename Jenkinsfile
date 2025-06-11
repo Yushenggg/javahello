@@ -25,4 +25,6 @@ pipeline {
             // Notify failure
             echo 'Build failed!'
         }
+        
+    }
 }
